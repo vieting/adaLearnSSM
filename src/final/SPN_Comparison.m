@@ -8,7 +8,7 @@ addpath(genpath('../General'));
 %% Parameters
 SPN_Model_pure
 
-L           = (sim.tend-sim.t0)/sim.tstep+1;
+L           = (sim.tend-sim.t0)/sim.tstep;
 [P,T]       = size(SPN.Pre);
 mu          = 0.1;
 noise_set   = 1:2;
@@ -21,6 +21,9 @@ N_points    = 11;
 
 foldername  = '/path/to/folder/';
 assert(logical(exist(foldername)), 'Please specify a correct path')
+for path={[foldername,'Simulation'], [foldername,'Results']}
+    if ~logical(exist(path{1})); mkdir(path{1}); end
+end
 
 %% Multiple executions
 SPN_Comparison_data;

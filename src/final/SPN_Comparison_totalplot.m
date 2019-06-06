@@ -14,7 +14,7 @@ t_plot  = 0:(L-1)/(N_points-1):L;
 %% Coefficient error plot
 figure;
 semilogy(t_plot,MSE_dA_GDF,'-o','Linewidth',1.5); hold on;
-ax = gca; ax.ColorOrderIndex = 7
+ax = gca; ax.ColorOrderIndex = 7;
 semilogy(t_plot,MSE_dA_GDI,'-d','Linewidth',1.5);
 ax = gca; ax.ColorOrderIndex = 2;
 semilogy(t_plot,MSE_dA_DGD,'-^','Linewidth',1.5);
